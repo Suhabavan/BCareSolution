@@ -1,20 +1,70 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<div class="fixed-top">
+	<nav class="navbar navbar-expand-lg navbar-light" style=" height: 60px; background:deeppink;">
+    <img src="../assets/bcarelog.jpeg" height=auto; width=60px;>
+    <b style="margin-left:10px;" class="navbar-brand">B-CARE</b>
+  <!--<div class="searchbar"style="margin-top:10px;margin-left:100px;">
+      <input class="search_input" type="text" name="" style="color:whitesmoke" placeholder="Search...">
+      <a href="#" class="search_icon"><i class="fa fa-search" aria-hidden="true"></i></a>
+    </div>
+  -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto topnav">
+        <li class="nav-item">
+            <a><button
+              style="border-radius:10px;width:100px;height:35px;"
+              type="button"
+              *ngIf="logusr=='logedin'"
+              routerLink="/login"
+              class="btn btn-primary btn-sm float-right">Login</button></a>
+        </li>
+        <li class="nav-item">
 
+          <a><button
+            style="border-radius:10px;width:100px;height:35px;"
+            type="button"
+            *ngIf="logusr=='logdout'"
+
+            (click)="logOut()"
+            class="btn btn-primary btn-sm float-right">Logout</button></a>
+      </li>
+    </ul>
+  </div>
+  </nav>
+</div>
+
+<div class="nav-side-menu" style="margin-top:60px;">
+    <div class="brand">Menu</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+        <div class="menu-list">
+
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                  <a routerLink="/home" >
+                  <i class="fa fa-home"></i> Home
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/userdetails"><i class="fa fa-heartbeat"></i>Quick Checkup</a>
+                </li>
+
+                <li>
+
+                  <a routerLink="/exercise"><i class="fa fa-calendar" ></i> Daily Tracker </a>
+                </li>
+
+                <li>
+                  <a routerLink="/center"><i class="fa fa-car fa-lg"></i> Centers</a>
+                </li>
+
+                 <li>
+                  <a routerLink="/chatbot"><i class="fa fa-info-circle" ></i> Help Desk </a>
+                </li>
+
+
+            </ul>
+     </div>
+
+</div>
+<router-outlet></router-outlet>

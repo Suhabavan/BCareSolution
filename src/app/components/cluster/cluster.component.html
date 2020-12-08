@@ -1,0 +1,47 @@
+<div style="margin-top: 90px; margin-left:20px;">
+    <br>
+    <div>
+        <h3 style="font-size: 35px; text-align: center; font-weight: 800;">RESULT</h3>
+    </div>
+    <div style="margin:auto; width: fit-content;">
+      <B style="font-size: 30px;">You belong to {{category}}</B>
+    </div>
+    <div style="margin:auto; width: fit-content;">
+      <B style="font-size: 30px;">You have {{percentage}} probability of Breast Cancer</B>
+    </div>
+    <br>
+    <div class="row" style="margin:auto; width: fit-content;">
+        <div class="column" style="align-items: center;">
+            <div class="row">
+                <canvas style="height:320px; width:500px;" baseChart
+                [datasets]="barChartData"
+                [labels]="barChartLabels"
+                [options]="barChartOptions"
+                [legend]="barChartLegend"
+                [colors]="chartColors"
+                [chartType]="barChartType"></canvas>
+            </div>
+            <div class="row" style="margin-left: 150px;">
+              <b style="font-weight:bolder; font-size:25px;">Live Cluster Graph</b>
+          </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <div class="column">
+          <div class="row">
+            <ngb-carousel *ngIf="event_list">
+              <ng-template ngbSlide *ngFor="let event of past_events">
+                <img [src]="event.img" height="280" width="470" alt="Random slide">
+                <div class="carousel-caption">
+                  <h3>{{ event.eventLocation }}</h3>
+                  <p style="color:rgb(3, 3, 3); font-weight: 600;" [innerText]="event.eventDescription"></p>
+                </div>
+              </ng-template>
+            </ngb-carousel>
+          </div>
+          <div class="row" style="margin-left: 120px; margin-top:40px;">
+            <b style="font-weight:bolder; font-size:25px;">Suggested Exercises</b>
+        </div>
+        </div>
+    </div>
+</div>
+

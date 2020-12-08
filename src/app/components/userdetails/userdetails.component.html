@@ -1,0 +1,286 @@
+<div style="margin:auto; width:900px; margin-top:80px;">
+  <div *ngIf="value=='true'">
+      <form style="margin-left:100px;" #form="ngForm" (submit)="userDetails(form)" autocomplete="off">
+          <h2 style="margin-left:300px; font-weight: bolder;">Quick Checkup</h2>
+          <table>
+              <tr>
+                  <td>
+                      <input type="text" id="userName" ngModel name="userName" placeholder="Name*" class="form-control" autofocus required>
+                  </td>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td>
+                      <input type="text" id="age"  ngModel name="age" placeholder="Age*" class="form-control" autofocus>
+                  </td>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td>
+                      <input type="text" id="weight" ngModel name="weight" placeholder="Weight in kg*" class="form-control" autofocus>
+                  </td>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td style="background-color:white;">
+                      <table>
+                          <tr >
+                            <td style="width:250px;">
+
+                          <ng-multiselect-dropdown
+                            [placeholder]="'Select Symptom'"
+                            [data]="data"
+                            [settings]="settings"
+                            id="symptoms"
+                            name="symptoms"
+                            ngModel
+                            >
+                              </ng-multiselect-dropdown>
+                           <td>
+                          </tr>
+                        </table>
+                  </td>
+              </tr>
+          </table>
+
+          <br>
+
+          <table>
+              <tr>
+                  <td class="align">
+                      <div>
+                          <b>Gender: </b>&nbsp;&nbsp;
+                          <input id="gender" type="radio" value="male" name="gender" ngModel>Male
+                          <input style= "margin-left:15px;" id="gender" type="radio" value="female" name="gender" ngModel>Female
+                          <input style= "margin-left:15px;" id="gender" type="radio" value="others" name="gender" ngModel>Others
+                      </div>
+                  </td>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  <td class="align">
+                      <div>
+                          <b>Food Habit: </b>&nbsp;&nbsp;
+                          <input id="foodHabit" type="radio" value="Veg" name="foodHabit" ngModel>Veg
+                          <input style= "margin-left:15px;" id="foodHabit" type="radio" value="Non-Veg" name="foodHabit" ngModel>Non Veg
+                          <input style= "margin-left:15px;" id="foodHabit" type="radio" value="Vegan" name="foodHabit" ngModel>Vegan
+                      </div>
+                  </td>
+              </tr>
+          </table>
+
+
+          <br>
+          <table>
+              <tr>
+                  <td class="align">
+                      <div>
+                          <b>Family History of Cancer: </b>&nbsp;&nbsp;
+                          <input id="familyHistoryOfCancer" type="radio" value="Yes" name="familyHistoryOfCancer" ngModel>Yes
+                          <input style= "margin-left:15px;" id="familyHistoryOfCancer" type="radio" value="No" name="familyHistoryOfCancer" ngModel>No
+                      </div>
+                  </td>
+
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  <td class="align">
+                      <div>
+                          <b>Personal History of Cancer: </b>&nbsp;&nbsp;
+                          <input id="personaHistoryOfCancer" type="radio" value="Yes" name="personaHistoryOfCancer" ngModel>Yes
+                          <input style= "margin-left:15px;" id="personaHistoryOfCancer" type="radio" value="No" name="personaHistoryOfCancer" ngModel>No
+                      </div>
+                  </td>
+
+              </tr>
+          </table>
+
+          <br>
+          <table>
+              <tr>
+                  <td class="align">
+                      <div>
+                          <b>Age at first Menstrual cycle: </b>&nbsp;&nbsp;
+                          <input id="firstMenstrualAge" type="text" placeholder="Age*" name="firstMenstrualAge" ngModel>
+                      </div>
+                  </td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td class="align">
+                      <div>
+                          <b>Exposure to Radition: </b>&nbsp;&nbsp;
+                          <input id="exposureToRadiation" type="radio" value="Yes" name="exposureToRadiation" ngModel>Yes
+                          <input style= "margin-left:15px;" id="exposureToRadiation" type="radio" value="No" name="exposureToRadiation" ngModel>No
+                      </div>
+                  </td>
+              </tr>
+          </table>
+
+
+          <br>
+          <table>
+              <tr>
+                  <td class="align">
+                      <div>
+                          <b>Breast Feeding: </b>&nbsp;&nbsp;
+                          <input id="breastFeeding" type="radio" value="Yes" name="breastFeeding" ngModel>Yes
+                          <input style= "margin-left:15px;" id="breastFeeding" type="radio" value="No" name="breastFeeding" ngModel>No
+                      </div>
+                  </td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  <td class="align">
+                      <div>
+                          <b>Occupation with physical activity: </b>&nbsp;&nbsp;
+                          <input id="occupationInvolvesPhysicalActivity" type="radio" value="Yes" name="occupationInvolvesPhysicalActivity" ngModel>Yes
+                          <input style= "margin-left:15px;" id="occupationInvolvesPhysicalActivity" type="radio" value="No" name="occupationInvolvesPhysicalActivity" ngModel>No
+                      </div>
+                  </td>
+              </tr>
+          </table>
+
+          <br>
+          <table>
+              <tr>
+                  <td>
+                      <div>
+                          <b>Menopause: </b>&nbsp;&nbsp;
+                          <input id="menopause" type="radio" value="Yes" name="menopause" ngModel>Yes
+                          <input style= "margin-left:15px;" id="menopause" type="radio" value="No" name="menopause" ngModel>No
+                      </div>
+                  </td>
+                  <td>
+                      &nbsp;
+                      <i
+                          mat-raised-button
+                          matTooltip="Please enter Menopause"
+                          matTooltipPosition='right'
+                          aria-label="Button that displays a tooltip when focused or hovered over"
+                          class="fa fa-info-circle" aria-hidden="true"
+                       >
+                      </i>
+                  </td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td>
+                      <div>
+                          <b>Harmonal Use: </b>&nbsp;&nbsp;
+                          <input id="harmonalUse" type="radio" value="Yes" name="harmonalUse" ngModel>Yes
+                          <input style= "margin-left:15px;" id="harmonalUse" type="radio" value="No" name="harmonalUse" ngModel>No
+                      </div>
+                  </td>
+                  <td>
+                      &nbsp;
+                      <i
+                          mat-raised-button
+                          matTooltip="Please enter harmonal use"
+                          matTooltipPosition='right'
+                          aria-label="Button that displays a tooltip when focused or hovered over"
+                          class="fa fa-info-circle" aria-hidden="true"
+                       >
+                      </i>
+                  </td>
+              </tr>
+          </table>
+
+
+          <br>
+          <table>
+              <tr>
+                  <td>
+                      <div>
+                          <b>Postmenopausal: </b>&nbsp;&nbsp;
+                          <input id="postmenopausal" type="radio" value="Yes" name="postmenopausal" ngModel>Yes
+                          <input style= "margin-left:15px;" id="postmenopausal" type="radio" value="No" name="postmenopausal" ngModel>No
+                      </div>
+                  </td>
+                  <td>
+                      &nbsp;
+                      <i
+                          mat-raised-button
+                          matTooltip="Please select Postmenopausal"
+                          matTooltipPosition='right'
+                          aria-label="Button that displays a tooltip when focused or hovered over"
+                          class="fa fa-info-circle" aria-hidden="true"
+                       >
+                      </i>
+                  </td>
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;
+                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  <td>
+                      <b>Pregnant :</b>&nbsp;&nbsp;<input name="pregnant" [(ngModel)]="pregnant" type="radio" [value]="1" [checked]="options"/> Yes
+                      <input name="pregnant" [(ngModel)]="pregnant" type="radio" [value]="0" /> No
+
+                      <p *ngIf="pregnant == 1">
+                      <b>Age of first pregnancy : </b><input ngModel id="ageOfFirstPregnancy" name="ageOfFirstPregnancy" type="text">
+                      </p>
+
+                      <p *ngIf="pregnant == 0"></p>
+                  </td>
+              </tr>
+          </table>
+
+          <tr>
+              <td style="width:410px;">
+                  <b>Ethnicity:&nbsp;&nbsp;&nbsp;</b><mat-form-field>
+                      <mat-select ngModel id="ethnicity" name="ethnicity" placeholder="select">
+                        <mat-option [value]="'hispanic'">Hispanic</mat-option>
+                        <mat-option [value]="'black'">Black</mat-option>
+                        <mat-option [value]="'asian'">Asian</mat-option>
+                        <mat-option [value]="'pacific'">Pacific Islander</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                    &nbsp;
+                    <i
+                        mat-raised-button
+                        matTooltip="Please select Ethnicity"
+                        matTooltipPosition='right'
+                        aria-label="Button that displays a tooltip when focused or hovered over"
+                        class="fa fa-info-circle" aria-hidden="true"
+                     >
+                    </i>
+              </td>
+              <td>
+                  <input type="text" id="height" ngModel name="height" placeholder="Height in cm*" class="form-control" autofocus>
+              </td>
+          </tr>
+
+
+  <div>
+   <br>
+  <b>Have you ever diagnostic test : </b><input name="diagnosticTest" [(ngModel)]="diagnosticTest" type="radio" [value]="1" [checked]="options"/> Yes
+  <input name="diagnosticTest" [(ngModel)]="diagnosticTest" type="radio" [value]="0" /> No
+
+  <p *ngIf="diagnosticTest == 1">
+
+  <b>Which diagnostic test: </b><input id="whichDiagnosticTest" ngModel name="whichDiagnosticTest" type="text">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <b>Where the results negative</b>
+  <input id="diagnosticResultNegative" type="radio" value="Yes" name="diagnosticResultNegative" ngModel>Yes
+  <input style= "margin-left:15px;" id="diagnosticResultNegative" type="radio" value="No" name="diagnosticResultNegative" ngModel>No
+
+  </p>
+
+  <br>
+  <br>
+  </div>
+     <button
+     style="margin-left:350px; width:100px; height:40px; "
+     type="submit"
+     class="btn btn-primary register_btn"
+   >
+   Apply
+  </button>
+      </form>
+  </div>
+  <div *ngIf="value=='false'" style="margin-left:180px; font-size: larger;">
+      <b>You have already done the Quick Checkup. </b>
+      <a routerLink="/cluster"><b>Click here to know Cluster details</b></a>
+  </div>
+</div>
+

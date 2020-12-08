@@ -1,0 +1,133 @@
+<div style="margin:auto; background-color:pink; width:fit-content; height:auto; margin-top:60px;">
+
+    <mat-tab-group mat-align-tabs="center">
+        <mat-tab  label="Sign Up">
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                  <div class="card">
+                    <div class="card-header">
+                      <h3 >Sign In</h3>
+                    </div>
+                    <div class="card-body">
+                      <form #form1="ngForm" (submit)="loginValidation(form1)" autocomplete="off">
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                          </div>
+                          <input type="text"
+                                 ngModel
+                                 class="form-control"
+                                 #email="ngModel"
+                                 name="email"
+                                 id="email"
+                                 placeholder="Email">
+
+                        </div>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-key" aria-hidden="true"></i></span>
+                          </div>
+                          <input type="password"
+                                 ngModel
+                                 class="form-control"
+                                 #password="ngModel"
+                                 name="password"
+                                 id="password"
+                                 placeholder="Password">
+                        </div>
+                        <div class="row align-items-center remember">
+                          <input type="checkbox">Remember Me
+                        </div>
+                        <div style="padding-right:110px;"class="form-group">
+                          <input type="submit" value="Login" class="btn float-right login_btn" [disabled]="form.invalid">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="card-footer">
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </mat-tab>
+        <mat-tab label="Register">
+            <div class="container">
+                <div class="d-flex justify-content-center h-100">
+                  <div class="cards">
+                    <div class="card-header">
+                      <h3 style="margin:auto; text-align: center; color:white">Registration</h3>
+                    </div>
+                    <div class="card-body">
+                      <form #form="ngForm" (submit)="registration(form)" autocomplete="off">
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <h4 class="label">Name</h4>
+                          </div>
+                          <input type="text"
+                                 ngModel
+                                 class="form-control input"
+                                 #userName="ngModel"
+                                 name="userName"
+                                 id="userName"
+                                 placeholder="Name"
+                                 style="margin-left: 175px;">
+
+                        </div>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <h4 class="label">Email Id</h4>
+                          </div>
+                          <input type="text"
+                                 ngModel
+                                 class="form-control input"
+                                 #emailId="ngModel"
+                                 name="emailId"
+                                 id="emailId"
+                                 placeholder="Email Id"
+                                 style="margin-left: 155px;">
+
+                        </div>
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <h4 class="label">Password</h4>
+                          </div>
+                          <input type="password"
+                                 ngModel
+                                 class="form-control input"
+                                 #password="ngModel"
+                                 name="password"
+                                 id="password"
+                                 placeholder="Password"
+                                 style="margin-left: 135px;">
+
+                        </div>
+
+                        <div class="input-group form-group">
+                          <div class="input-group-prepend">
+                            <h4 class="label">Confirm Password</h4>
+                          </div>
+                          <input type="password"
+                                 ngModel
+                                 class="form-control input"
+                                 #phonenumber="ngModel"
+                                 name="cpassword"
+                                 id="cpassword"
+                                 placeholder="Confirm Password"
+                                 style="margin-left: 45px;">
+
+                        </div>
+
+                        <div style="padding-right:220px;" class="form-group">
+                          <input  type="submit" value="Register" class="btn float-right login_btn" [disabled]="form.invalid">
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+        </mat-tab>
+
+      </mat-tab-group>
+</div>
